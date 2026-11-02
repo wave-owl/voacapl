@@ -1,0 +1,167 @@
+{
+  "bomFormat": "CycloneDX",
+  "components": [
+    {
+      "bom-ref": "external-library:0",
+      "name": "Conditional source requirements declared by configure.ac",
+      "properties": [
+        {
+          "name": "sbom:role",
+          "value": "conditional-build-runtime-requirement"
+        },
+        {
+          "name": "sbom:resolution",
+          "value": "conditional; unresolved version"
+        },
+        {
+          "name": "sbom:declared-version",
+          "value": "unresolved; see immutable declaration evidence"
+        },
+        {
+          "name": "sbom:evidence",
+          "value": "[{\"path\": \"configure.ac\", \"sha256\": \"bb733ed475f4b64ef4c4f3f9de4e42f9664c0580d221551c0dd546460f30bed6\"}]"
+        }
+      ],
+      "type": "library"
+    },
+    {
+      "bom-ref": "external-library:1",
+      "name": "Fortran compiler and Autotools; math runtime",
+      "properties": [
+        {
+          "name": "sbom:role",
+          "value": "conditional-build-runtime-requirement"
+        },
+        {
+          "name": "sbom:resolution",
+          "value": "conditional; unresolved version"
+        },
+        {
+          "name": "sbom:declared-version",
+          "value": "unresolved; conditional source declaration"
+        },
+        {
+          "name": "sbom:evidence",
+          "value": "[{\"path\": \"configure.ac\", \"sha256\": \"bb733ed475f4b64ef4c4f3f9de4e42f9664c0580d221551c0dd546460f30bed6\"}]"
+        }
+      ],
+      "type": "library"
+    }
+  ],
+  "compositions": [
+    {
+      "aggregate": "unknown",
+      "assemblies": [
+        "git:https://github.com/wave-owl/voacapl@c12a98b348c39f36f2659b8b3aa97b86284c8a1d"
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "dependsOn": [],
+      "ref": "external-library:0"
+    },
+    {
+      "dependsOn": [],
+      "ref": "external-library:1"
+    },
+    {
+      "dependsOn": [
+        "external-library:0",
+        "external-library:1"
+      ],
+      "ref": "git:https://github.com/wave-owl/voacapl@c12a98b348c39f36f2659b8b3aa97b86284c8a1d"
+    }
+  ],
+  "metadata": {
+    "component": {
+      "bom-ref": "git:https://github.com/wave-owl/voacapl@c12a98b348c39f36f2659b8b3aa97b86284c8a1d",
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/wave-owl/voacapl/tree/c12a98b348c39f36f2659b8b3aa97b86284c8a1d"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "License evidence; see declared files"
+          }
+        }
+      ],
+      "name": "wave-owl/voacapl",
+      "properties": [
+        {
+          "name": "sbom:role",
+          "value": "source-root"
+        },
+        {
+          "name": "sbom:git-commit",
+          "value": "c12a98b348c39f36f2659b8b3aa97b86284c8a1d"
+        },
+        {
+          "name": "sbom:git-tree",
+          "value": "4b43adf1499ece4938c66ce766e22184a209a231"
+        },
+        {
+          "name": "sbom:source-repository",
+          "value": "https://github.com/wave-owl/voacapl"
+        },
+        {
+          "name": "sbom:release-tags",
+          "value": "[]"
+        },
+        {
+          "name": "sbom:license-evidence",
+          "value": "[{\"path\": \"COPYING\", \"sha256\": \"befc5397f28ba16e63e12858bc474c6cfbf287dec1faaf8a5c66a79ffab9890e\"}, {\"path\": \"LICENSE\", \"sha256\": \"91cafdb49e4766d79aa3b5c8bbfe5d2ddc287e96e563f11eae779e72354a549c\"}]"
+        },
+        {
+          "name": "sbom:license-resolution",
+          "value": "unresolved; manual review required"
+        },
+        {
+          "name": "sbom:snapshot",
+          "value": "true"
+        },
+        {
+          "name": "sbom:snapshot-source-commit",
+          "value": "c12a98b348c39f36f2659b8b3aa97b86284c8a1d"
+        },
+        {
+          "name": "sbom:snapshot-scope",
+          "value": "Initial immutable source snapshot, before the tooling commit; not a release report."
+        }
+      ],
+      "type": "application",
+      "version": "c12a98b348c39f36f2659b8b3aa97b86284c8a1d"
+    },
+    "properties": [
+      {
+        "name": "sbom:scope",
+        "value": "Source repository inventory only; completeness is UNKNOWN. Syft inventories tracked source/package manifests. Gitlinks and declared vendored/model evidence are inspected at immutable pins. CMake declarations are conditional requirements, not resolved installations. This is NOT proof of operating-system packages, static-link closure, build-time resolution, or the contents of release binaries."
+      },
+      {
+        "name": "sbom:generation-status",
+        "value": "success"
+      },
+      {
+        "name": "sbom:generation-errors",
+        "value": "[]"
+      }
+    ],
+    "timestamp": "2026-11-02T16:53:56.266997+00:00",
+    "tools": {
+      "components": [
+        {
+          "author": "anchore",
+          "name": "syft",
+          "type": "application",
+          "version": "1.55.0"
+        }
+      ]
+    }
+  },
+  "serialNumber": "urn:uuid:18a7bb64-d5e6-4222-b5d0-28c6a228bf84",
+  "specVersion": "1.6",
+  "version": 1
+}
